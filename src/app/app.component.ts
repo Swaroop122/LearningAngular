@@ -1,35 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/models/employee';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit  {
-  title = 'p1';
+export class AppComponent {
+  title = 'one';
 
-  employee:Employee;
-
-  employeeList:Employee[];
-
-  constructor(private httpClient:HttpClient)
+  constructor()
   {
-    console.log('We are in the constructor');
+    this.testfunction();
+  }
+  testfunction()
+  {
+    var x=1223;
+    var x=13;
+    let list=[1,2,3];
+    for(let e in list)
+    {
+      console.log(e);
+    }
+    for(let e of list)
+    {
+      console.log(e);
+    }
+    for(var i=1;i<=3;i++)
+    {
+      console.log('i value is'+i);
+    }
+    console.log('i value'+i);
+    
+    //if(res)
+    //{
+    //  console.log('yes');
+    //}
+    //else{
+    //  console.log('no');
+    //}
+    //var res=2;
     
   }
-   
-  ngOnInit()
-  {
-  console.log('we are in the ngoninit method');
+ 
+
   
-  this.employee=new Employee(101,'raj','sirsi',10000);
-  this.httpClient.get<Employee[]>(https://localhost:44340/api/Employee').subscribe
-    (list=>
-      {
-        this.employeeList=list;
-      }
-    );
-  }
 }
